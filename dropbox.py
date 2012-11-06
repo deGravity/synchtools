@@ -37,14 +37,17 @@ Cases (to,from)
 
 """
 
+def checklink(path):
+    return os.path.islink(path)
+
 def update(tofile, fromfile):
     tostate = 3
     fromstate = 3
-    if (os.path.islink(tofile)):
+    if (checklink(tofile)):
         tostate = 2
     elif (os.path.exists(tofile)):
         tostate = 1
-    if (os.path.islink(fromfile)):
+    if (checklink(fromfile)):
         fromstate = 2
     elif (os.path.exists(fromfile)):
         fromstate = 1
@@ -125,7 +128,7 @@ def deletefile(f):
     return
 
 def delete(t):
-    if (os.path.islink(t)):
+    if (checklink(t)):
         deletelink(t)
     elif (os.path.isdir(t)):
         deletedir(t)
@@ -152,7 +155,7 @@ def merge(fromdir, intodir):
             files = os.listdir(fromdir)
             for f in files:
                 merge(fromdir + '/' + f, intodir + '/' + f)
-    elif (not os.path.islink(fromdir) and os.path.exists(fromdir)):
+    elif (not checklink(fromdir) and os.path.exists(fromdir)):
         mergefile(fromdir, intodir)
     print('Finished Merging')
     return
