@@ -1,0 +1,13 @@
+Documents/Ebooks <- Documents/Ebooks
+Documents/Notes <- Documents/Notes
+Documents/Personal <- Documents/Personal
+Documents/Sheetmusic <- Documents/Sheetmusic
+Camera Uploads <- Pictures/Camera
+Images <- Pictures/Images
+Archive <- Archive
+Pocket <- Desktop/Pocket
+Scratch <- Scratch
+(MAC) Library/texmf <- Library/texmf
+(MAC | LINUX) dotfiles/.vimrc <- .vimrc
+dotfiles/.vim <- .vim
+bin <- bin
